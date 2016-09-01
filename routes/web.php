@@ -12,5 +12,28 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+
+// Catch-All Route
+Route::group(['prefix' => ''], function() {
+
+    Route::any('{path?}', function()
+    {
+        return view("index");
+    })->where("path", ".+");
+
+});
+
+/*
+|--------------------------------------------------------------------------
+| Blade Config
+|--------------------------------------------------------------------------
+|
+| Changing the Blade tags to <% %> so that Angular can use {{ }} tags
+|
+ */
+
+Blade::setContentTags('<%', '%>');        // for variables and all things Blade
+Blade::setEscapedContentTags('<%%', '%%>');   // for escaped data
