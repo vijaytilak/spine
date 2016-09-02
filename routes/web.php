@@ -26,6 +26,8 @@ Route::group(['prefix' => ''], function() {
 
 });
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Blade Config
@@ -37,3 +39,14 @@ Route::group(['prefix' => ''], function() {
 
 Blade::setContentTags('<%', '%>');        // for variables and all things Blade
 Blade::setEscapedContentTags('<%%', '%%>');   // for escaped data
+
+
+/*
+|--------------------------------------------------------------------------
+| View Config
+|--------------------------------------------------------------------------
+|
+| Include hbs files for views
+|
+ */
+View::addExtension('hbs', 'php');
