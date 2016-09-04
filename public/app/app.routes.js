@@ -372,10 +372,20 @@ spineApp.config(function ($routeProvider, $locationProvider) {
         })
 
         .otherwise({
-            redirectTo: '/'
+            templateUrl: 'app/shared/errors/404.hbs',
+            controller: 'errorController',
+            animation: 'slide'
         });
 
-    // use the HTML5 History API
+    /* Redirect outside the views
+     .otherwise({
+     controller: function () {
+     window.location.replace('/spine/public/app/shared/errors/error.html');
+     },
+     template: "<div></div>"
+     });*/
+
+    // use the HTML5 History API - to remove #
     $locationProvider.html5Mode(true);
 
 });

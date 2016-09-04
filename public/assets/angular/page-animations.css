@@ -13,30 +13,19 @@
 .ng-enter {
     overflow: hidden;
 }
-/* page specific animations ------------------------ */
+/* For page specific animations - Add page specific classes ------------------------ */
 
-/* home -------------------------- */
+/* -----------All pages--------------- */
 .ng-leave        {
-    -webkit-animation:fadeOutUp 0.5s both ease-in;
-    -moz-animation:fadeOutUp 0.5s both ease-in;
-    animation:fadeOutUp 0.5s both ease-in;
+    -webkit-animation:fadeOutLeft 0.4s both ease-in;
+    -moz-animation:fadeOutLeft 0.4s both ease-in;
+    animation:fadeOutLeft 0.4s both ease-in;
 
 }
 .ng-enter 		{
-    -webkit-animation:scaleUpCenter 0.5s both ease-in;
-    -moz-animation:scaleUpCenter 0.5s both ease-in;
-    animation:scaleUpCenter 0.5s both ease-in;
-    -webkit-animation-delay: 0.5s; /* Chrome, Safari, Opera */
-    animation-delay: 0.5s;
-}
-
-/* scale up */
-@keyframes scaleUp {
-    from 		{ opacity: 0.3; transform: scale(0.8); }
-}
-@-moz-keyframes scaleUp {
-    from 		{ opacity: 0.3; -moz-transform: scale(0.8); }
-}
-@-webkit-keyframes scaleUp {
-    from 		{ opacity: 0.3; -webkit-transform: scale(0.8); }
+    -webkit-animation:fadeInRight 0.5s both ease-in;
+    -moz-animation:fadeInRight 0.5s both ease-in;
+    animation:fadeInRight 0.5s both ease-in;
+    -webkit-animation-delay: 0.2s; /* Chrome, Safari, Opera */
+    animation-delay: 0.2s;
 }

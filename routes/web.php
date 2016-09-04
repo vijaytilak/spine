@@ -22,7 +22,7 @@ Route::group(['prefix' => ''], function() {
     Route::any('{path?}', function()
     {
         return view("index");
-    })->where("path", ".+");
+    })->where("path", ".*");
 
 });
 
@@ -46,7 +46,8 @@ Blade::setEscapedContentTags('<%%', '%%>');   // for escaped data
 | View Config
 |--------------------------------------------------------------------------
 |
-| Include hbs files for views
+| Include hbs and html files for views
 |
  */
 View::addExtension('hbs', 'php');
+View::addExtension('html', 'php');

@@ -29,9 +29,9 @@
     <script type="text/javascript" src="app/app.routes.js"></script>
     <script type="text/javascript" src="app/app.controller.js"></script>
 
-    <%-- Home --%>
+    <%-- Includes --%>
     @include('components/home/includes')
-
+    @include('shared/errors/includes')
 
 </head>
 
@@ -44,6 +44,7 @@
     <div id="page-content-wrapper">
         <div id="page-content">
             @include('shared/main/themeoptionsView')
+            <!-- View -->
             <div ng-view ng-class="pageTransition"></div>
         </div>
     </div>
