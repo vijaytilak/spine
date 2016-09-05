@@ -1,6 +1,47 @@
 // configure our routes
-spineApp.config(function ($routeProvider, $locationProvider) {
-    $routeProvider
+spineApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+
+    $urlRouterProvider.otherwise('/error');
+
+    $stateProvider
+
+        // ERROR
+        .state('error', {
+            url: '/error',
+            templateUrl: 'app/shared/errors/404.hbs',
+            controller: 'errorController'
+        })
+
+        // INDEX
+        .state('index', {
+            url: '/',
+            views: {
+                '': { templateUrl: 'app/shared/main/indexView.hbs' },
+
+                'headerView@index': {
+                    templateUrl: 'app/shared/main/headerView.hbs'
+                },
+                'sidebarView@index': {
+                    templateUrl: 'app/shared/main/sidebarView.hbs'
+                },
+                'themeoptionsView@index': {
+                    templateUrl: 'app/shared/main/themeoptionsView.hbs'
+                },
+                'homeView@index': {
+                    templateUrl: 'app/components/home/homeView.hbs',
+                    controller: 'homeController'
+                },
+            }
+
+        })
+
+/*
+        .state('home', {
+            url: '/',
+            templateUrl: 'app/components/home/homeView.hbs',
+            controller: 'homeController'
+        })
+
 
         .when('/', {
             templateUrl: 'app/components/home/homeView.hbs',
@@ -370,12 +411,8 @@ spineApp.config(function ($routeProvider, $locationProvider) {
             templateUrl: 'pages/view-profile.hbs',
             controller: 'view-profileController'
         })
+*/
 
-        .otherwise({
-            templateUrl: 'app/shared/errors/404.hbs',
-            controller: 'errorController',
-            animation: 'slide'
-        });
 
     /* Redirect outside the views
      .otherwise({

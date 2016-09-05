@@ -1,4 +1,4 @@
-var spineApp = angular.module('spineApp', ['ngRoute']);
+var spineApp = angular.module('spineApp', ['ui.router']);
 
 // constant variable with the WEB & API URL
 spineApp.constant('WEB_URL', 'http://localhost/spine/public/');

@@ -38,16 +38,8 @@
 <body ng-controller="mainController">
 
 <div id="page-wrapper">
-    @include('shared/main/headerView')
-    @include('shared/main/sidebarView')
-
-    <div id="page-content-wrapper">
-        <div id="page-content">
-            @include('shared/main/themeoptionsView')
-            <!-- View -->
-            <div ng-view ng-class="pageTransition"></div>
-        </div>
-    </div>
+    <!-- Index View -->
+    <div id="index-view" ui-view></div>
 </div>
 @include('shared/main/includes/js-widgets')
 </div>
