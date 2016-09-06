@@ -22,7 +22,6 @@
     @include('shared/main/includes/css-applications')
     @include('shared/main/includes/css-themes')
     @include('shared/main/includes/js-core')
-    @include('shared/main/includes/js-angular')
 
     <%-- Angular App - Main --%>
     <script type="text/javascript" src="app/app.module.js"></script>
@@ -41,7 +40,7 @@
     <!-- Index View -->
     <div id="index-view" ui-view></div>
 </div>
-@include('shared/main/includes/js-widgets')
+<%--@include('shared/main/includes/js-widgets')--%>
 </div>
 </body>
 </html>

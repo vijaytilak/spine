@@ -18,15 +18,6 @@ spineApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider)
             views: {
                 '': { templateUrl: 'app/shared/main/indexView.hbs' },
 
-                'headerView@index': {
-                    templateUrl: 'app/shared/main/headerView.hbs'
-                },
-                'sidebarView@index': {
-                    templateUrl: 'app/shared/main/sidebarView.hbs'
-                },
-                'themeoptionsView@index': {
-                    templateUrl: 'app/shared/main/themeoptionsView.hbs'
-                },
                 'homeView@index': {
                     templateUrl: 'app/components/home/homeView.hbs',
                     controller: 'homeController'

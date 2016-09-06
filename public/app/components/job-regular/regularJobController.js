@@ -1,18 +1,17 @@
 /**
- * Home Controller - Wizard
+ * Regular Job Controller - Wizard
  *
- * Routing for Steps
  */
-spineApp.controller('homeController', function ($scope, $location) {
+spineApp.controller('regularJobController', function ($scope, $location) {
     $scope.model = {};
-    $scope.steps = [
+    $scope.regularJobSteps = [
         {
-            template: 'layouts/vlayout/modules/Project/wizardApp/html/step1.html',
+            template: 'regular 1',
             title: 'step1',
             hasForm: true,
         },
         {
-            template: 'layouts/vlayout/modules/Project/wizardApp/html/step2.html',
+            template: 'regular 2',
             title: 'step2',
             hasForm: true,
         }
