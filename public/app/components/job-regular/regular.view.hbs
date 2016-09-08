@@ -1,0 +1,48 @@
+<div id="page-title">
+    <h2>Regular Job</h2>
+    <p></p>
+</div>
+<multi-step-container steps="regularJobSteps" class="simple-prev-next" search-id="'step'">
+    <header>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel">
+                    <div class="panel-body">
+                        <div class="example-box-wrapper">
+
+                            <ul class="pager mrg0A">
+                                <li ng-class="getPreviousBtnClass($isFirst())" ng-click="$previousStep()"><a href="#">&larr; Previous</a></li>
+                                <li ng-class="getHomeBtnClass($isFirst())" ui-sref="index.home({ crmId: record.crmId })"><a href="#">&larr; Home</a></li>
+                                <li><strong ng-bind-template="{{$getActiveIndex()}}. {{$getActiveStep().title}}"></strong>&nbsp;&nbsp;<strong ng-class="getIsValidClass($getActiveStep().hasForm,$getActiveStep().valid)"></strong></li>
+                                <li ng-class="getNextBtnClass($isLast(),$getActiveStep().hasForm,$getActiveStep().valid)" ng-click="$nextStep()"><a href="#">Next &rarr;</a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main step-container></main>
+
+    <footer>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel">
+                    <div class="panel-body">
+                        <div class="example-box-wrapper">
+
+                            <ul class="pager mrg0A">
+                                <li ng-class="getPreviousBtnClass($isFirst())" ng-click="$previousStep()"><a href="#">&larr; Previous</a></li>
+                                <li ng-class="getHomeBtnClass($isFirst())" ui-sref="index.home({ crmId: record.crmId })"><a href="#">&larr; Home</a></li>
+                                <li ng-class="getNextBtnClass($isLast(),$getActiveStep().hasForm,$getActiveStep().valid)" ng-click="$nextStep()"><a href="#">Next &rarr;</a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</multi-step-container>

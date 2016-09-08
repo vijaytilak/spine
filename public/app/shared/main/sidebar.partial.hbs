@@ -2,10 +2,19 @@
     <div class="scroll-sidebar">
 
 
+        <table id="menubar">
+            <tr><th>Menu Title</th><th>pageno</th></tr>
+            <tr ng-repeat="item in menuItems">
+                <td>{{item.title}}</td>
+                <td>{{item.template}}</td>
+            </tr>
+        </table>
+
+
         <ul id="sidebar-menu">
             <li class="header"><span>Overview</span></li>
             <li>
-                <a ui-sref-active="btn btn-alt btn-hover btn-info" ui-sref="index" title="Home">
+                <a ui-sref-active="btn btn-alt btn-hover btn-info" ui-sref="index.home({ crmId: record.crmId })" title="Home">
                     <i class="glyph-icon icon-iconic-home"></i>
                     <span>Home</span>
                 </a>

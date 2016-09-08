@@ -1,0 +1,16 @@
+general view
+<form name="MyForm" class="form-horizontal" form-step-validity>
+    <div class="form-group">
+
+        <label class="control-label col-sm-3">First name:</label>
+
+        <div class="col-sm-7">
+            <input type="text" ng-model="model.firstName" name="firstName" class="form-control" placeholder="Enter your first name" required>
+        </div>
+    </div>
+    {{model}}
+</form>
+<p>
+    <button type="button" class="btn btn-primary" ng-click="$setValidity(!$getActiveStep().valid)">Toggle Validity</button>
+    {{$getActiveStep().valid ? 'valid' : 'non-valid'}}
+</p>

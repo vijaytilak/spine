@@ -1,9 +1,10 @@
-spineApp.controller('mainController', function ($scope) {
-
+spineApp.controller('mainController', function ($scope, menuService) {
+    $scope.menuItems = menuService.getMenuItems();
 });
 
-spineApp.controller('indexController', function ($scope, productService) {
-    alert('inside');
+
+spineApp.controller('advanced-datatablesController', function ($scope, $rootScope, productService) {
+    alert('inside dt');
 
     var callToAddToProductList = function(currObj){
         productService.addProduct(currObj);
@@ -11,10 +12,6 @@ spineApp.controller('indexController', function ($scope, productService) {
 
     callToAddToProductList('prod1');
 
-});
-
-spineApp.controller('advanced-datatablesController', function ($scope, $rootScope, productService) {
-    alert('inside dt');
 
     this.model = productService.getProducts();
 

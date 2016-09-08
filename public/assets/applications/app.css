@@ -12,3 +12,59 @@
     right: 0;
     margin: auto;
 }
+
+/*font-awesome*/
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+}
+
+.fa-github:before {
+    content: "\f09b";
+}
+
+.fa-chevron-left:before {
+    content: "\f053";
+}
+
+.fa-chevron-right:before {
+    content: "\f054";
+}
+
+.fa-check:before {
+    content: "\f00c";
+}
+
+.fa-times:before {
+    content: "\f00d";
+}
+
+.fa-home:before {
+    content: "\f015";
+}
+
+/*Previous and Next Buttons*/
+
+.pager .navbtn > a {
+    color: #fff;
+    border-color: #308dcc;
+    background: #3498db;
+}
+
+.pager .navbtn > a:focus {
+    color: #fff;
+    border-color: #308dcc;
+    background: #3498db;
+}
+
+.pager .navbtn > a:hover {
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+}

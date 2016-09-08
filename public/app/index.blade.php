@@ -27,18 +27,25 @@
     <script type="text/javascript" src="app/app.module.js"></script>
     <script type="text/javascript" src="app/app.routes.js"></script>
     <script type="text/javascript" src="app/app.controller.js"></script>
+    <script type="text/javascript" src="app/app.service.js"></script>
+    <script type="text/javascript" src="app/app.directive.js"></script>
 
     <%-- Includes --%>
-    @include('components/home/includes')
+    @include('shared/main/includes')
     @include('shared/errors/includes')
+    @include('components/home/includes')
+    @include('components/job-regular/includes')
+    @include('components/job-regular/general/includes')
+    @include('components/job-regular/rail/includes')
+    @include('components/job-regular/roof/includes')
 
 </head>
 
 <body ng-controller="mainController">
 
 <div id="page-wrapper">
-    <!-- Index View -->
-    <div id="index-view" ui-view></div>
+    <!-- Main View -->
+    <div ui-view></div>
 </div>
 <%--@include('shared/main/includes/js-widgets')--%>
 </div>

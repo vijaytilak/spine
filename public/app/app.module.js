@@ -17,7 +17,7 @@ spineApp.run([
 
         //Values from vTiger
         $rootScope.record = {
-            recordID: '12345',
+            crmId: '12345',
             module: 'projects',
             mode: 'planning' //modes : quote, planning and implementation
         };
