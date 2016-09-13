@@ -3,6 +3,8 @@
  *
  */
 spineApp.controller('regularController', function ($scope, $location, regularStepService) {
+
+
     /**
      * Regular Job - Step Service
      */

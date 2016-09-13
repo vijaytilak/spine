@@ -13,7 +13,7 @@
                             <ul class="pager mrg0A">
                                 <li ng-class="getPreviousBtnClass($isFirst())" ng-click="$previousStep()"><a href="#">&larr; Previous</a></li>
                                 <li ng-class="getHomeBtnClass($isFirst())" ui-sref="index.home({ crmId: record.crmId })"><a href="#">&larr; Home</a></li>
-                                <li><strong ng-bind-template="{{$getActiveIndex()}}. {{$getActiveStep().title}}"></strong>&nbsp;&nbsp;<strong ng-class="getIsValidClass($getActiveStep().hasForm,$getActiveStep().valid)"></strong></li>
+                                <li><strong ng-bind-template="{{$getActiveIndex()}}. {{$getActiveStep().title}}"></strong>&nbsp;&nbsp;<strong ng-class="getIsValidClass($getActiveStep().hasForm, $getActiveStep().valid)"></strong></li>
                                 <li ng-class="getNextBtnClass($isLast(),$getActiveStep().hasForm,$getActiveStep().valid)" ng-click="$nextStep()"><a href="#">Next &rarr;</a></li>
                             </ul>
 

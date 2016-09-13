@@ -2,24 +2,31 @@ var spineApp = angular.module('spineApp', [
 //    'ngAnimate',
     'ui.router',
     'ui.bootstrap',
-    'multiStepForm'
+    'multiStepForm',
+    'kendo.directives'
 ]);
 
 // constant variable with the WEB & API URL
-spineApp.constant('WEB_URL', 'http://localhost/spine/public/');
-spineApp.constant('API_URL', 'http://localhost/spine/public/api/');
+spineApp.constant('BASE_WEB_URL', '/spine/public/');
+spineApp.constant('BASE_API_URL', '/spine/public/api/');
 
 spineApp.run([
     '$location',
     '$rootScope',
     function ($location, $rootScope) {
         $rootScope.$location = $location;
+        $rootScope.$protocol = $location.protocol();
+        $rootScope.$host = $location.host();
+        $rootScope.$baseUrlWeb = '/spine/public/';
+        $rootScope.$baseUrlApi = '/spine/public/api/';
+
 
         //Values from vTiger
         $rootScope.record = {
             crmId: '12345',
-            module: 'projects',
-            mode: 'planning' //modes : quote, planning and implementation
+            module: 'Project',
+            mode: 'Planning', //modes : quote, planning and implementation
+            jobType: 'Regular'
         };
 
     }

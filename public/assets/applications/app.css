@@ -49,22 +49,30 @@
     content: "\f015";
 }
 
-/*Previous and Next Buttons*/
-
-.pager .navbtn > a {
-    color: #fff;
-    border-color: #308dcc;
-    background: #3498db;
+/*Sidebar Menu CSS*/
+#sidebar-menu > li > a.menu-active {
+    padding: 0 10px 0 0;
+    border-radius: 3px;
+    font-size: 13px;
+    line-height: 35px;
+    height: 36px;
+    color: #00a2bc;
+    border: 1px solid #00a2bc;
+}
+#sidebar-menu > li > a.menu-active:hover {
+    text-decoration: none;
+}
+#sidebar-menu > li > a.menu-normal:hover {
+    text-decoration: none;
+    color: #222;
+    border: 1px solid #d1d9dd;
 }
 
-.pager .navbtn > a:focus {
-    color: #fff;
-    border-color: #308dcc;
-    background: #3498db;
+#sidebar-menu > li > a.menu-active,
+#sidebar-menu > li > a.menu-active:active,
+#sidebar-menu > li > a.menu-normal,
+#sidebar-menu > li > a.menu-normal:active
+{
+    text-decoration: none;
 }
 
-.pager .navbtn > a:hover {
-    color: #fff;
-    background-color: #5bc0de;
-    border-color: #46b8da;
-}

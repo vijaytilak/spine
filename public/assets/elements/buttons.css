@@ -354,11 +354,44 @@ input[type='button'].btn-block {
 .pager .next > a,
 .pager .next > span {
     float: right;
+    color: #fff;
+    border-color: #308dcc;
+    background: #3498db;
 }
 .pager .previous > a,
 .pager .previous > span {
     float: left;
+    color: #fff;
+    border-color: #308dcc;
+    background: #3498db;
 }
+.pager .next > a:hover {
+    float: right;
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+}
+.pager .next > a:focus {
+    float: right;
+    color: #fff;
+    border-color: #308dcc;
+    background: #3498db;
+}
+
+.pager .previous > a:hover {
+    float: left;
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+}
+.pager .previous > a:focus {
+    float: left;
+    color: #fff;
+    border-color: #308dcc;
+    background: #3498db;
+}
+
+
 .pagination > .disabled > span,
 .pagination > .disabled > span:hover,
 .pagination > .disabled > span:focus,
@@ -373,6 +406,14 @@ input[type='button'].btn-block {
     color: #999;
     background-color: #fff;
 }
+
+.pager .disabled > a,
+.pager .disabled > a:hover,
+.pager .disabled > a:focus,
+.pager .disabled > span {
+    border-color: #ccc;
+}
+
 /* Icon separator */
 
 .btn > .icon-separator {
