@@ -4,3 +4,26 @@ rail viewssssssssssssss
     <button type="button" class="btn btn-primary" ng-click="$setValidity(!$getActiveStep().valid)">Toggle Validity</button>
     {{$getActiveStep().valid ? 'valid' : 'non-valid'}}
 </p>
+
+
+<kendo-grid options="mainGridOptions">
+    <div k-detail-template>
+        <kendo-tabstrip>
+            <ul>
+                <li class="k-state-active">Orders</li>
+                <li>Contact information</li>
+            </ul>
+            <div>
+                <div kendo-grid k-options="detailGridOptions(dataItem)"></div>
+            </div>
+            <div>
+                <ul class="contact-info-form">
+                    <li><label>Country:</label> <input class="k-textbox" ng-model="dataItem.Country" /></li>
+                    <li><label>City:</label> <input class="k-textbox" ng-model="dataItem.City" /></li>
+                    <li><label>Address:</label> {{dataItem.Address}}</li>
+                    <li><label>Home phone:</label> {{dataItem.HomePhone}}</li>
+                </ul>
+            </div>
+        </kendo-tabstrip>
+    </div>
+</kendo-grid>

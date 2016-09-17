@@ -18,7 +18,8 @@ spineApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider)
         // INDEX
         .state('index', {
             url: '',
-            templateUrl: 'app/shared/main/index.view.hbs'
+            templateUrl: 'app/shared/main/index.view.hbs',
+            controller: 'indexController'
         })
         .state('index.home', {
             url: '/{crmId:[0-9]+}',

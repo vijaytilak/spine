@@ -2,23 +2,21 @@
     <h2>Regular Job</h2>
     <p></p>
 </div>
-<multi-step-container steps="regularJobSteps" class="simple-prev-next" search-id="'step'">
+
+<!-- multiStepFormScope -->
+<multi-step-container steps="steps" class="simple-prev-next" search-id="'step'" controller="multiStepFormController">
     <header>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="panel">
-                    <div class="panel-body">
-                        <div class="example-box-wrapper">
+        <div class="panel">
+            <div class="panel-body">
+                <div class="example-box-wrapper">
 
-                            <ul class="pager mrg0A">
-                                <li ng-class="getPreviousBtnClass($isFirst())" ng-click="$previousStep()"><a href="#">&larr; Previous</a></li>
-                                <li ng-class="getHomeBtnClass($isFirst())" ui-sref="index.home({ crmId: record.crmId })"><a href="#">&larr; Home</a></li>
-                                <li><strong ng-bind-template="{{$getActiveIndex()}}. {{$getActiveStep().title}}"></strong>&nbsp;&nbsp;<strong ng-class="getIsValidClass($getActiveStep().hasForm, $getActiveStep().valid)"></strong></li>
-                                <li ng-class="getNextBtnClass($isLast(),$getActiveStep().hasForm,$getActiveStep().valid)" ng-click="$nextStep()"><a href="#">Next &rarr;</a></li>
-                            </ul>
+                    <ul class="pager mrg0A">
+                        <li ng-class="getPreviousBtnClass($isFirst())" ng-click="$previousStep()"><a href="#">&larr; Previous</a></li>
+                        <li ng-class="getHomeBtnClass($isFirst())" ui-sref="index.home({ crmId: record.crmId })"><a href="#">&larr; Home</a></li>
+                        <li><strong ng-bind-template="{{$getActiveIndex()}}. {{$getActiveStep().title}}"></strong>&nbsp;&nbsp;<strong ng-class="getIsValidClass($getActiveStep().hasForm, $getActiveStep().valid)"></strong></li>
+                        <li ng-class="getNextBtnClass($isLast(),$getActiveStep().hasForm,$getActiveStep().valid)" ng-click="$nextStep()"><a href="#">Next &rarr;</a></li>
+                    </ul>
 
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -26,21 +24,48 @@
 
     <main step-container></main>
 
+    <!-- Diagram -->
+    <div class="content-box">
+        <h3 class="content-box-header bg-default">
+            Diagram
+            <div class="header-buttons-separator">
+                <a href="#" class="icon-separator toggle-button" ng-click="isCollapsed = !isCollapsed">
+                    <i ng-class="isCollapsed ? 'icon-chevron-up' : 'icon-chevron-down'" class="glyph-icon"></i>
+                </a>
+            </div>
+        </h3>
+        <!-- Panel Body Collapse -->
+        <div class="content-box-wrapper" uib-collapse="isCollapsed">
+            <div kendo-tab-strip k-content-urls="[
+                        'app/components/job-regular/plan.partial.hbs',
+                        'app/components/job-regular/leftend.partial.hbs',
+                        'app/components/job-regular/rightend.partial.hbs'
+                        ]">
+                <!-- tab header -->
+                <ul>
+                    <li class="k-state-active">Plan View</li>
+                    <li>Left End View</li>
+                    <li>Right End View</li>
+                </ul>
+                <!-- tab body -->
+                <div style="padding: 1em"></div>
+                <div style="padding: 1em"></div>
+                <div style="padding: 1em"></div>
+            </div>
+        </div>
+    </div>
+
     <footer>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="panel">
-                    <div class="panel-body">
-                        <div class="example-box-wrapper">
+        <div class="panel">
+            <div class="panel-body">
+                <div class="example-box-wrapper">
 
-                            <ul class="pager mrg0A">
-                                <li ng-class="getPreviousBtnClass($isFirst())" ng-click="$previousStep()"><a href="#">&larr; Previous</a></li>
-                                <li ng-class="getHomeBtnClass($isFirst())" ui-sref="index.home({ crmId: record.crmId })"><a href="#">&larr; Home</a></li>
-                                <li ng-class="getNextBtnClass($isLast(),$getActiveStep().hasForm,$getActiveStep().valid)" ng-click="$nextStep()"><a href="#">Next &rarr;</a></li>
-                            </ul>
+                    <ul class="pager mrg0A">
+                        <li ng-class="getPreviousBtnClass($isFirst())" ng-click="$previousStep()"><a href="#">&larr; Previous</a></li>
+                        <li ng-class="getHomeBtnClass($isFirst())" ui-sref="index.home({ crmId: record.crmId })"><a href="#">&larr; Home</a></li>
+                        <li ng-class="getNextBtnClass($isLast(),$getActiveStep().hasForm,$getActiveStep().valid)" ng-click="$nextStep()"><a href="#">Next &rarr;</a></li>
+                    </ul>
 
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

@@ -91,6 +91,7 @@
     color: #fff !important;
     background: #3b5998;
 }
+.btn.bg-facebook:focus,
 .btn.bg-facebook:hover {
     background: #304b85;
 }
@@ -98,6 +99,7 @@
     color: #fff !important;
     background: #3a92c8;
 }
+.btn.bg-twitter:focus,
 .btn.bg-twitter:hover {
     background: #2b80b4;
 }
@@ -105,6 +107,7 @@
     color: #fff !important;
     background: #dd4b39;
 }
+.btn.bg-google:focus,
 .btn.bg-google:hover {
     background: #c93b2a;
 }

@@ -3,7 +3,7 @@ var spineApp = angular.module('spineApp', [
     'ui.router',
     'ui.bootstrap',
     'multiStepForm',
-    'kendo.directives'
+    'kendo.directives',
 ]);
 
 // constant variable with the WEB & API URL

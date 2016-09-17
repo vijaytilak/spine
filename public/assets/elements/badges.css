@@ -36,12 +36,12 @@
 
 .badge,
 .bs-badge {
-    font-size: 11px;
+    font-size: 9px;
     font-weight: bold;
-    line-height: 19px;
+    line-height: 17px;
     display: inline-block;
     min-width: 20px;
-    height: 20px;
+    height: 18px;
     padding: 0 4px 0 5px;
     text-align: center;
     vertical-align: baseline;

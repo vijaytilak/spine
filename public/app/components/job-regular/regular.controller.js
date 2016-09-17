@@ -1,23 +1,21 @@
 /**
+ * MultiStepForm Controller - Wizard
+ *
+ */
+spineApp.controller('multiStepFormController', function ($rootScope,multiStepFormInstance) {
+
+    /* *************Required for all Steps******************/
+    $rootScope.multiStepFormInstance = multiStepFormInstance;
+
+});
+
+/**
  * Regular Job Controller - Wizard
  *
  */
-spineApp.controller('regularController', function ($scope, $location, regularStepService) {
+spineApp.controller('regularController', function ($scope) {
 
-
-    /**
-     * Regular Job - Step Service
-     */
     $scope.model = {};
-    $scope.regularJobSteps = regularStepService.getAllSteps();
-
-    $scope.cancel = function () {
-        alert('Cancel has been called. You are going to be redirected home!');
-    };
-
-    $scope.finish = function () {
-        alert('Finish has been called. You are going to be redirected home!');
-    };
 
     /**
      * Get Previous Btn Class
@@ -67,7 +65,6 @@ spineApp.controller('regularController', function ($scope, $location, regularSte
                 isValidClass = 'fa fa-check font-green';
             else
                 isValidClass = 'fa fa-times font-red';
-
         } else {
             isValidClass = 'hide';
         }
