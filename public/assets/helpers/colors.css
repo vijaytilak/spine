@@ -247,6 +247,38 @@
     color: #444;
     background: #ededed;
 }
+
+/* Gray Dark */
+
+.badge-gray-dark,
+.label-gray-dark,
+.btn-gray-dark,
+.hover-gray-dark:hover,
+.bg-gray-dark {
+    color: #fff;
+    background: #aaa;
+}
+.label-gray-dark[href]:hover,
+.label-gray-dark[href]:focus,
+.btn-gray-dark:hover,
+.btn-gray-dark:focus,
+.btn-gray-dark:active,
+.btn-gray-dark.active,
+.open .dropdown-toggle.btn-gray-dark,
+.btn-gray-dark.disabled,
+.btn-gray-dark[disabled],
+.btn-gray-dark.disabled:hover,
+.btn-gray-dark[disabled]:hover,
+.btn-gray-dark.disabled:focus,
+.btn-gray-dark[disabled]:focus,
+.btn-gray-dark.disabled:active,
+.btn-gray-dark[disabled]:active,
+.btn-gray-dark.disabled.active,
+.btn-gray-dark[disabled].active {
+    color: #fff;
+    background: #aaa;
+}
+
 /* Black */
 
 .badge-black,

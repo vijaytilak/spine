@@ -1,6 +1,5 @@
-spineApp.controller('indexController', function ($scope,$rootScope,$location,regularStepService) {
+spineApp.controller('indexController', function ($scope, $rootScope, $location) {
 
-    $scope.steps = regularStepService.getAllSteps();
 
     /**
      * Get Class to show Form Validity
@@ -12,11 +11,11 @@ spineApp.controller('indexController', function ($scope,$rootScope,$location,reg
     $scope.getIsValidClass = function (isValid) {
         var isValidClass;
 
-        if(isValid==true)
+        if (isValid == true)
             isValidClass = 'glyph-icon icon-check font-green';
-        else if(isValid==false)
+        else if (isValid == false)
             isValidClass = 'glyph-icon icon-close font-red';
-        else if(isValid==null)
+        else if (isValid == null)
             isValidClass = 'glyph-icon icon-circle-o';
 
         return (isValidClass);
@@ -28,7 +27,7 @@ spineApp.controller('indexController', function ($scope,$rootScope,$location,reg
      * @returns {string}
      */
     $scope.getMenuItemClass = function (path) {
-        return ($location.path().substr(1, path.length)+'?step='+$rootScope.multiStepFormInstance.getActiveIndex() === path) ? 'menu-active' : 'menu-normal';
+        return ($location.path().substr(1, path.length) + '?step=' + $rootScope.multiStepFormInstance.getActiveIndex() === path) ? 'menu-active' : 'menu-normal';
     }
 
 

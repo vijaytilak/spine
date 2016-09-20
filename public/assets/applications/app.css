@@ -59,9 +59,11 @@
     color: #00a2bc;
     border: 1px solid #00a2bc;
 }
+
 #sidebar-menu > li > a.menu-active:hover {
     text-decoration: none;
 }
+
 #sidebar-menu > li > a.menu-normal:hover {
     text-decoration: none;
     color: #222;
@@ -71,8 +73,34 @@
 #sidebar-menu > li > a.menu-active,
 #sidebar-menu > li > a.menu-active:active,
 #sidebar-menu > li > a.menu-normal,
-#sidebar-menu > li > a.menu-normal:active
-{
+#sidebar-menu > li > a.menu-normal:active {
     text-decoration: none;
+}
+
+/* Component Selection CSS */
+a.sel {
+    background: #b7ca6e;
+    color: #fff;
+}
+
+a.sel:focus,
+a.sel:hover {
+    background: #b7ca6e;
+    color: #fff;
+}
+
+a.gray {
+    background: #eff4f6;
+}
+
+a.selJobTypeClass {
+    background: #60c0ce;
+    color: #fff;
+}
+
+a.selJobTypeClass:focus,
+a.selJobTypeClass:hover {
+    background: #60c0ce;
+    color: #444;
 }
 

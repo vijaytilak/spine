@@ -48,6 +48,7 @@
     white-space: nowrap;
     color: #fff;
     border-radius: 10px;
+    font-style: normal;
 }
 .badge-small {
     min-width: 10px;

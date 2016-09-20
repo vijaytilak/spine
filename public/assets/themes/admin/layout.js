@@ -128,7 +128,8 @@ $(document).ready(function() {
     /* Colapse sidebar */
     $(function() {
 
-        $('#close-sidebar').click(function() {
+        jQuery('#close-sidebar').click(function() {
+            alert('reached');
             $('body').toggleClass('closed-sidebar');
             $('.glyph-icon', this).toggleClass('icon-angle-right').toggleClass('icon-angle-left');
         });

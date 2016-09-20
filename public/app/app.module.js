@@ -4,9 +4,19 @@ var spineApp = angular.module('spineApp', [
     'ui.bootstrap',
     'multiStepForm',
     'kendo.directives',
+    'dialogs.main',
 ]);
 
-// constant variable with the WEB & API URL
+// Config continues in app.routes.js
+spineApp.config(function(dialogsProvider){
+    // dialog config
+    dialogsProvider.useBackdrop(true);
+    dialogsProvider.useEscClose(true);
+    dialogsProvider.useCopy(false);
+    dialogsProvider.setSize('md');
+});
+
+// Constant variable with the WEB & API URL
 spineApp.constant('BASE_WEB_URL', '/spine/public/');
 spineApp.constant('BASE_API_URL', '/spine/public/api/');
 
@@ -24,8 +34,8 @@ spineApp.run([
         //Values from vTiger
         $rootScope.record = {
             crmId: '12345',
-            module: 'Project',
-            mode: 'Planning', //modes : quote, planning and implementation
+            module: 'Quotes',
+            mode: 'Quote', //modes : quote, planning and implementation
             jobType: 'Regular'
         };
 

@@ -1,5 +1,5 @@
 
-spineApp.controller('mainController', function ($scope) {
+spineApp.controller('mainController', function ($scope,$rootScope) {
 
 });
 

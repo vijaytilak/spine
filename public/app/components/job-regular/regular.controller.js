@@ -4,7 +4,7 @@
  */
 spineApp.controller('multiStepFormController', function ($rootScope,multiStepFormInstance) {
 
-    /* *************Required for all Steps******************/
+    /***************Required for all Steps******************/
     $rootScope.multiStepFormInstance = multiStepFormInstance;
 
 });
@@ -13,9 +13,11 @@ spineApp.controller('multiStepFormController', function ($rootScope,multiStepFor
  * Regular Job Controller - Wizard
  *
  */
-spineApp.controller('regularController', function ($scope) {
+spineApp.controller('regularController', function ($scope,stepService) {
 
     $scope.model = {};
+
+    $scope.steps = stepService.getSelectedSteps();
 
     /**
      * Get Previous Btn Class

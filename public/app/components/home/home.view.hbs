@@ -15,50 +15,9 @@
 </header>
 
     <div class="row">
-        <div class="col-md-3">
-            <div class="content-box mrg15B">
-                <h3 class="content-box-header clearfix">
-                    Users
-                    <small>(Sharing options)</small>
-                    <div class="font-size-16 float-right">
-                        <a href="#" title="">
-                            <i class="glyph-icon mrg5R opacity-hover icon-typicons-user-add"></i>
-                        </a>
-                    </div>
-                </h3>
-                <div class="content-box-wrapper nav-list clearfix">
-                    <div class="list-group">
-                        <a href="#" class="list-group-item" title="">
-                            <i class="glyph-icon icon-circle-o float-left font-green mrg5L"></i>
-                            Grant
-                            <div class="float-right col-md-3 pad0A">
-                                <i class="glyph-icon icon-edit btn btn-xs hover-orange opacity-hover"></i>
-                                <i class="glyph-icon icon-remove btn btn-xs hover-red opacity-hover"></i>
-                            </div>
-                        </a>
-                        <a href="#" class="list-group-item" title="">
-                            <i class="glyph-icon icon-circle-o float-left font-gray mrg5L"></i>
-                            Ravin
-                            <div class="float-right col-md-3 pad0A">
-                                <i class="glyph-icon icon-edit btn btn-xs hover-orange opacity-hover"></i>
-                                <i class="glyph-icon icon-remove btn btn-xs hover-red opacity-hover"></i>
-                            </div>
-                        </a>
-                        <a href="#" class="list-group-item" title="">
-                            <i class="glyph-icon icon-circle-o float-left font-red mrg5L"></i>
-                            Richard
-                            <div class="float-right col-md-3 pad0A">
-                                <i class="glyph-icon icon-edit btn btn-xs hover-orange opacity-hover"></i>
-                                <i class="glyph-icon icon-remove btn btn-xs hover-red opacity-hover"></i>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="col-md-9">
             <div class="profile-box content-box">
-                <div class="panel-content image-box bg-panel-img">
+                <div class="panel-content image-box">
                     <div class="ribbon">
                         <div class="bg-primary">Quote</div>
                     </div>
@@ -111,15 +70,15 @@
                 <ul class="list-group list-group-separator row list-group-icons">
 
                     <li class="col-md-6">
-                        <a href="#" class="list-group-item">
+                        <a href="#" class="list-group-item" ng-class="record.jobType == 'Regular' ? 'selJobTypeClass' : ''" ng-click="setRecordJobType('Regular')">
                             <i class="glyph-icon font-orange icon-linecons-shop"></i>
-                            Regular
+                            REGULAR
                         </a>
                     </li>
                     <li class="col-md-6">
-                        <a href="#" class="list-group-item">
+                        <a href="#" class="list-group-item" ng-class="record.jobType == 'Custom' ? 'selJobTypeClass' : ''" ng-click="setRecordJobType('Custom')">
                             <i class="glyph-icon font-orange icon-linecons-globe"></i>
-                            Custom
+                            CUSTOM
                         </a>
                     </li>
                 </ul>
@@ -127,41 +86,58 @@
             <div class="panel">
                 <div class="panel-body">
                     <h3 class="title-hero">
-                        Select Components
+                        Select Components : {{record.jobType}} Job
                     </h3>
-
-
-
-
-
-
-                    <a ng-repeat="(key, item) in regularJobSteps" class="list-group-item" title="{{item.title}}">
-                        <span class="bs-badge badge-blue-alt float-left mrg15R">{{key+1}}</span>
-                        {{item.title}} - {{item.data.listOrder}}
-                        <div class="float-right col-md-2 pad0A">
-                            <i ng-click="remove(item)" ng-class="getIsValidClass(item.valid)"></i>
-                        </div>
-                    </a>
-
-
-
                     <div class="example-box-wrapper">
                         <ul class="list-group row">
-                            <li ng-repeat="(key, item) in regularJobSteps" class="col-md-3 mrg10T">
-                                <a href="#" class="list-group-item">
-                                    <i class="bs-badge badge-blue-alt float-left mrg15R">{{key+1}}</i>
+                            <li ng-repeat="(key, item) in allSteps" class="col-md-2 mrg10T" ng-class="{disabled: item.data.mandatory}" ng-click="item.data.mandatory || toggleSelection($index)">
+                                <a href="#" class="list-group-item" ng-class="isSelected[$index] ? 'sel' : 'gray'">
+                                    <i class="glyph-icon float-left mrg15R" ng-class="isSelected[$index] ? 'icon-elusive-ok-circled2 font-white font-size-14' : 'icon-elusive-cancel-circled2 font-gray  font-size-14'"></i>
                                     {{item.title}}
-                                    <i class="glyph-icon icon-chevron-right"></i>
-                                </a>
-                            </li>
-                            <li class="col-md-3">
-                                <a href="#" class="list-group-item disabled">
-                                    <i class="glyph-icon font-blue-alt icon-globe"></i>
-                                    Disabled link
-                                    <i class="glyph-icon icon-chevron-right"></i>
                                 </a>
                             </li>
                         </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="content-box mrg15B">
+                <h3 class="content-box-header clearfix">
+                    Users
+                    <small>(Sharing options)</small>
+                    <div class="font-size-16 float-right">
+                        <a href="#" title="">
+                            <i class="glyph-icon mrg5R opacity-hover icon-typicons-user-add"></i>
+                        </a>
+                    </div>
+                </h3>
+                <div class="content-box-wrapper nav-list clearfix">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item" title="">
+                            <i class="glyph-icon icon-circle-o float-left font-green mrg5L"></i>
+                            Grant
+                            <div class="float-right col-md-3 pad0A">
+                                <i class="glyph-icon icon-edit btn btn-xs hover-orange opacity-hover"></i>
+                                <i class="glyph-icon icon-remove btn btn-xs hover-red opacity-hover"></i>
+                            </div>
+                        </a>
+                        <a href="#" class="list-group-item" title="">
+                            <i class="glyph-icon icon-circle-o float-left font-gray mrg5L"></i>
+                            Ravin
+                            <div class="float-right col-md-3 pad0A">
+                                <i class="glyph-icon icon-edit btn btn-xs hover-orange opacity-hover"></i>
+                                <i class="glyph-icon icon-remove btn btn-xs hover-red opacity-hover"></i>
+                            </div>
+                        </a>
+                        <a href="#" class="list-group-item" title="">
+                            <i class="glyph-icon icon-circle-o float-left font-red mrg5L"></i>
+                            Richard
+                            <div class="float-right col-md-3 pad0A">
+                                <i class="glyph-icon icon-edit btn btn-xs hover-orange opacity-hover"></i>
+                                <i class="glyph-icon icon-remove btn btn-xs hover-red opacity-hover"></i>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
