@@ -5,6 +5,7 @@ var spineApp = angular.module('spineApp', [
     'multiStepForm',
     'kendo.directives',
     'dialogs.main',
+    'oitozero.ngSweetAlert',
 ]);
 
 // Config continues in app.routes.js
