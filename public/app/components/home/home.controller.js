@@ -4,7 +4,7 @@
  * Routing for Steps
  */
 
-spineApp.controller('homeController', function($scope, $rootScope, stepService, dialogs, SweetAlert) {
+spineApp.controller('homeController', function($scope, $rootScope, stepService, ngToast, SweetAlert) {
 
     /**
      * Select Components
@@ -35,6 +35,8 @@ spineApp.controller('homeController', function($scope, $rootScope, stepService, 
                     if (isConfirm) {
                         $rootScope.record.jobType = jobType;
                         SweetAlert.swal("Updated!", "Job Type changed to " + jobType, "success");
+                        // create a simple toast:
+                        ngToast.create("Job Type changed to " + jobType);
                     } else {
                         SweetAlert.swal("Cancelled", "Job Type remains Unchanged.", "error");
                     }

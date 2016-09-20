@@ -6,6 +6,7 @@ var spineApp = angular.module('spineApp', [
     'kendo.directives',
     'dialogs.main',
     'oitozero.ngSweetAlert',
+    'ngToast',
 ]);
 
 // Config continues in app.routes.js

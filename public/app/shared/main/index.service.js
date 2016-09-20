@@ -1,5 +1,28 @@
+//Record Service
+spineApp.service('recordService', function ($rootScope) {
+    //vTiger Record
+    var record = {};
+
+    var setRecordObj = function (crmId) {
+        //Lookup Record from DB
+        //Else lookup Record from vTiger
+
+        return {
+            crmId: '12345',
+            module: 'Quotes',
+            mode: 'Quote',
+            jobType: 'Regular'
+        };
+    };
+
+    return {
+        setRecordObj: setRecordObj,
+    };
+
+});
+
 //Step Service
-spineApp.service('stepService', function ($rootScope,$filter) {
+spineApp.service('stepService', function ($rootScope,$filter,recordService) {
 
     var regularJobSteps = [
         {
@@ -78,6 +101,55 @@ spineApp.service('stepService', function ($rootScope,$filter) {
          hasForm: true,
          controller: 'regularSummaryController',
          },*/
+    ];
+
+    var customJobSteps = [
+        {
+            title: 'General',
+            templateUrl: 'app/components/job-custom/general/general.view.hbs',
+            hasForm: true,
+            controller: 'customGeneralController',
+            data: {
+                listOrder: 1,
+                mandatory: true,
+                selected: true
+            }
+        },
+        {
+            title: 'Rail',
+            templateUrl: 'app/components/job-custom/rail/rail.view.hbs',
+            hasForm: true,
+            controller: 'customRailController',
+            data: {
+                listOrder: 2,
+                mandatory: false,
+                selected: true
+            }
+
+        },
+        {
+            title: 'Roof',
+            templateUrl: 'app/components/job-custom/roof/roof.view.hbs',
+            hasForm: true,
+            controller: 'customRoofController',
+            data: {
+                listOrder: 3,
+                mandatory: false,
+                selected: false
+            }
+
+        },
+        {
+            title: 'Support',
+            templateUrl: 'app/components/job-custom/support/support.view.hbs',
+            hasForm: true,
+            controller: 'customSupportController',
+            data: {
+                listOrder: 4,
+                mandatory: false,
+                selected: false
+            }
+        }
     ];
 
 

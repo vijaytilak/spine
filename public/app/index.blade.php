@@ -23,6 +23,7 @@
 </head>
 
 <body ng-controller="mainController">
+    <toast></toast>
     <div id="page-wrapper">
         <!-- Main View -->
         <div ui-view></div>
