@@ -11,21 +11,26 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/{crmId}', function () {
     return view('index');
 });
 
 
-// Catch-All Route
-Route::group(['prefix' => ''], function() {
 
-    Route::any('{path?}', function()
-    {
-        return view("index");
-    })->where("path", ".*");
+/*
+|--------------------------------------------------------------------------
+| Catch All Routes for WEB requests
+|--------------------------------------------------------------------------
+|
+| Below route redirects all requests to Angular except for routes to api
+| Api routes are defined in api.php
+|
+*/
 
-});
-
+Route::any('{catchall}',function ( $catchall ) {
+    //dd( $catchall . ' requested' );
+    return view('index');
+} )->where(['catchall' => '^((?!api).)*$']);
 
 
 /*

@@ -1,22 +1,17 @@
 //Record Service
-spineApp.service('recordService', function ($rootScope) {
+spineApp.service('recordService', function ($rootScope,$http) {
     //vTiger Record
     var record = {};
 
-    var setRecordObj = function (crmId) {
+    var getRecordObjFromDB = function (crmId) {
         //Lookup Record from DB
         //Else lookup Record from vTiger
 
-        return {
-            crmId: '12345',
-            module: 'Quotes',
-            mode: 'Quote',
-            jobType: 'Regular'
-        };
+        return $http.get('/spine/public/api/records/'+crmId);
     };
 
     return {
-        setRecordObj: setRecordObj,
+        getRecordObjFromDB: getRecordObjFromDB,
     };
 
 });

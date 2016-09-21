@@ -4,7 +4,14 @@
  * Routing for Steps
  */
 
-spineApp.controller('homeController', function($scope, $rootScope, stepService, ngToast, SweetAlert) {
+spineApp.controller('homeController', function($scope, $rootScope, stepService, ngToast, SweetAlert, $stateParams, recordService) {
+
+
+
+    console.log($stateParams.crmId);
+    console.log('vijay');
+    $rootScope.record = recordService.getRecordObjFromDB($stateParams.crmId);
+
 
     /**
      * Select Components

@@ -12,10 +12,9 @@ class CreateArrayRecordsTable extends Migration {
 			$table->integer('record_crmid')->unique()->unsigned();
 			$table->string('record_module', 100);
 			$table->string('record_jobtype', 30);
-			$table->string('record_gst', 10);
+			$table->float('record_gst', 10);
 			$table->integer('record_metalfinish_id')->unsigned()->nullable();
 			$table->string('record_mode', 30);
-			$table->timestamps();
 			$table->timestamps();
 		});
 	}

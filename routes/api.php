@@ -13,6 +13,21 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:api');
+Route::resource('records', 'RecordController');
+
+/*
+|--------------------------------------------------------------------------
+| Catch All Routes for API requests
+|--------------------------------------------------------------------------
+|
+| Below route redirects all requests to Angular except for routes to api
+| Api routes are defined in api.php
+|
+*/
+
+Route::any( '{catchall}', function ( $page ) {
+    //dd( $page . ' requested' );
+    return view('index');
+} )->where('catchall', '(.*)');
+
+

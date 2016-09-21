@@ -1,6 +1,6 @@
 
-spineApp.controller('mainController', function ($scope,$rootScope) {
-
+spineApp.controller('mainController', function ($scope,$rootScope,vtigerService) {
+    vtigerService.vtigerExtendSession();
 });
 
 

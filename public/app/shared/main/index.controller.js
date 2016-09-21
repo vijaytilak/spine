@@ -1,6 +1,5 @@
 spineApp.controller('indexController', function ($scope, $rootScope, $location) {
 
-
     /**
      * Get Class to show Form Validity
      *
