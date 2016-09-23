@@ -13,6 +13,8 @@
 
     <%-- Includes --%>
     @include('shared/main/includes')
+    @include('shared/auth/includes')
+    @include('shared/user/includes')
     @include('shared/errors/includes')
     @include('components/home/includes')
     @include('components/job-regular/includes')

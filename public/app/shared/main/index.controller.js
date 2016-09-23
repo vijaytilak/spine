@@ -1,4 +1,6 @@
-spineApp.controller('indexController', function ($scope, $rootScope, $location) {
+spineApp.controller('indexController', function ($scope, $rootScope, $location, $state, $stateParams) {
+
+
 
     /**
      * Get Class to show Form Validity

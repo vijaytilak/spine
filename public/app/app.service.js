@@ -21,7 +21,7 @@ spineApp.service('vtigerService', function ($rootScope, $http) {
 
 
     return {
-        vtigerExtendSession: vtigerExtendSession,
+        getToken: getToken,
     };
 
 });
